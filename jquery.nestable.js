@@ -4,7 +4,7 @@
 
 (function($, window, document, undefined) {
     var hasTouch = 'ontouchstart' in document;
-
+//comment
     /**
      * Detect CSS pointer-events property
      * events are normally disabled on the dragging element to avoid conflicts
@@ -976,7 +976,12 @@
             if (!hasPointerEvents) {
                 this.dragEl[0].style.visibility = 'hidden';
             }
-            this.pointEl = $(document.elementFromPoint(e.pageX - document.body.scrollLeft, e.pageY - (window.pageYOffset || document.documentElement.scrollTop)));
+            this.pointEl = $(
+                document.elementFromPoint(
+                e.pageX - document.body.scrollLeft,
+                e.pageY - (window.pageYOffset || document.documentElement.scrollTop)
+            )
+            );
             if (!hasPointerEvents) {
                 this.dragEl[0].style.visibility = 'visible';
             }

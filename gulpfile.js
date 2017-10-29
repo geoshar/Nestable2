@@ -36,6 +36,9 @@ gulp.task('test', function () {
         .pipe(eslint.format())
         .pipe(eslint.failAfterError());
 });
-
+gulp.task('watch', function(){
+     gulp.watch([file+'.js'], ['js']);
+     gulp.watch([file+'.scss'], ['css']);
+});
 // build assets
 gulp.task('default', ['js', 'css']);
